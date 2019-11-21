@@ -152,6 +152,198 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-linux常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/21/linux常用命令/">linux常用命令</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/21/linux常用命令/" class="archive-article-date">
+  	<time datetime="2019-11-21T07:02:05.948Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="ls命令-list"><a href="#ls命令-list" class="headerlink" title="ls命令(list)"></a>ls命令(list)</h2><p>通过 ls 命令不仅可以查看 linux 文件夹包含的文件，而且可以查看文件权限(包括目录、文件夹、文件权限)查看目录信息等等。</p>
+<p>常用参数搭配：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ls -a   <span class="comment">#列出目录所有文件，包含以.开始的隐藏文件</span></span><br><span class="line">ls -A   <span class="comment">#列出除.及..的其它文件</span></span><br><span class="line">ls -r   <span class="comment">#反序排列</span></span><br><span class="line">ls -t   <span class="comment">#以文件修改时间排序</span></span><br><span class="line">ls -S   <span class="comment">#以文件大小排序</span></span><br><span class="line">ls -h   <span class="comment">#以易读大小显示</span></span><br><span class="line">ls -l   <span class="comment">#除了文件名之外，还将文件的权限、所有者、文件大小等信息详细列出来</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="cd-命令-changeDirectory"><a href="#cd-命令-changeDirectory" class="headerlink" title="cd 命令(changeDirectory)"></a>cd 命令(changeDirectory)</h2><p>命令语法:</p>
+<blockquote>
+<p>cd [目录名]</p>
+</blockquote>
+<p>实例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /    <span class="comment">#进入根目录</span></span><br><span class="line"><span class="built_in">cd</span> ~    <span class="comment">#进入 "home" 目录</span></span><br><span class="line"><span class="built_in">cd</span> -    <span class="comment">#进入上一次工作路径</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="pwd-命令"><a href="#pwd-命令" class="headerlink" title="pwd 命令"></a>pwd 命令</h2><p>pwd 命令用于查看当前工作目录路径。</p>
+<p>实例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">pwd</span>         <span class="comment">#查看当前路径</span></span><br><span class="line"><span class="built_in">pwd</span> -P      <span class="comment">#查看软链接的实际路径</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="mkdir-命令"><a href="#mkdir-命令" class="headerlink" title="mkdir 命令"></a>mkdir 命令</h2><p>mkdir命令用于创建文件夹。</p>
+<p>用法：</p>
+<blockquote>
+<p>mkdir [选项] 文件夹名</p>
+</blockquote>
+<p>可用选项：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-m      <span class="comment">#对新建目录设置存取权限，也可以用 chmod 命令设置;</span></span><br><span class="line">-p      <span class="comment">#可以是一个路径名称。此时若路径中的某些目录尚不存在,加上此选项后，系统将自动建立好那些尚不在的目录，即一次可以建立多个目录。</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="rm-命令"><a href="#rm-命令" class="headerlink" title="rm 命令"></a>rm 命令</h2><p>删除一个目录中的一个或多个文件或目录。</p>
+<blockquote>
+<p>rm [选项] 文件…</p>
+</blockquote>
+<p>选项：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-d      <span class="comment">#直接把欲删除的目录的硬连接数据删除成0，删除该目录；</span></span><br><span class="line">-f      <span class="comment">#强制删除文件或目录；</span></span><br><span class="line">-i      <span class="comment">#删除已有文件或目录之前先询问用户；</span></span><br><span class="line">-r或-R  <span class="comment">#递归处理，将指定目录下的所有文件与子目录一并处理；</span></span><br><span class="line">-v      <span class="comment">#显示指令的详细执行过程。</span></span><br><span class="line">--preserve-root     <span class="comment">#不对根目录进行递归操作；</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="rmdir-命令"><a href="#rmdir-命令" class="headerlink" title="rmdir 命令"></a>rmdir 命令</h2><p>从一个目录中删除一个或多个子目录项，删除某目录时也必须具有对其父目录的写权限。<strong>注意：不能删除非空目录</strong></p>
+<blockquote>
+<p>rmdir 目录</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-p      <span class="comment">#子目录被删除后父目录也成为空目录的话，则顺便一并删除：</span></span><br></pre></td></tr></table></figure>
+<h2 id="mv-命令"><a href="#mv-命令" class="headerlink" title="mv 命令"></a>mv 命令</h2><p>移动文件或修改文件名，根据第二参数类型（如目录，则移动文件；如为文件则重命名该文件）。当第二个参数为目录时，可刚多个文件以空格分隔作为第一参数，移动多个文件到参数 2 指定的目录中。</p>
+<p>实例：</p>
+<ol>
+<li><p>将文件 test.log 重命名为 test1.txt</p>
+<pre><code>mv test.log test1.txt
+</code></pre></li>
+<li><p>将文件 log1.txt,log2.txt,log3.txt 移动到根的 test3 目录中</p>
+<pre><code>mv llog1.txt log2.txt log3.txt /test3
+</code></pre></li>
+<li><p>将文件 file1 改名为 file2，如果 file2 已经存在，则询问是否覆盖</p>
+<pre><code>mv -i log1.txt log2.txt
+</code></pre></li>
+<li><p>移动当前文件夹下的所有文件到上一级目录</p>
+<pre><code>mv * ../
+</code></pre></li>
+</ol>
+<h2 id="cp-命令"><a href="#cp-命令" class="headerlink" title="cp 命令"></a>cp 命令</h2><p>将源文件复制至目标文件，或将多个源文件复制至目标目录。</p>
+<p>注意：命令行复制，如果目标文件已经存在会提示是否覆盖，而在 shell 脚本中，如果不加 -i 参数，则不会提示，而是直接覆盖！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-i 提示</span><br><span class="line">-r 复制目录及目录内所有项目</span><br><span class="line">-a 复制的文件与原文件时间一样</span><br></pre></td></tr></table></figure></p>
+<h2 id="cat-命令"><a href="#cat-命令" class="headerlink" title="cat 命令"></a>cat 命令</h2><p>cat 主要有三大功能：</p>
+<ol>
+<li><p>一次显示整个文件:</p>
+<pre><code>cat filename
+</code></pre></li>
+<li><p>从键盘创建一个文件(只能创建新文件，不能编辑已有文件):</p>
+<pre><code>cat &gt; filename
+</code></pre></li>
+<li><p>将几个文件合并为一个文件:</p>
+<pre><code>cat file1 file2 &gt; file
+</code></pre><p>选项:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-b 对非空输出行号</span><br><span class="line">-n 输出所有行号</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="more-命令"><a href="#more-命令" class="headerlink" title="more 命令"></a>more 命令</h2><p>功能类似于 cat, more 会以一页一页的显示方便使用者逐页阅读，而最基本的指令就是按空白键（space）就往下一页显示，按 b 键就会往回（back）一页显示。</p>
+<h2 id="less-命令"><a href="#less-命令" class="headerlink" title="less 命令"></a>less 命令</h2><p>less 与 more 类似，但使用 less 可以随意浏览文件，而 more 仅能向前移动，却不能向后移动，而且 less 在查看之前不会加载整个文件。</p>
+<p>常用命令参数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">空格键      滚动一行</span><br><span class="line">回车键      滚动一页</span><br><span class="line">[pagedown]      向下翻动一页</span><br><span class="line">[pageup]        向上翻动一页</span><br></pre></td></tr></table></figure></p>
+<h2 id="head-命令"><a href="#head-命令" class="headerlink" title="head 命令"></a>head 命令</h2><p>head 用来显示档案的开头至标准输出中，默认 head 命令打印其相应文件的开头 10 行。</p>
+<p>常用参数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-n &lt;行数&gt; 显示的行数（行数为负数表示从最后向前数）</span><br></pre></td></tr></table></figure></p>
+<h2 id="tail-命令"><a href="#tail-命令" class="headerlink" title="tail 命令"></a>tail 命令</h2><p>用于显示指定文件末尾内容，不指定文件时，作为输入信息进行处理。常用查看日志文件。</p>
+<p>常用参数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-f      循环读取（常用于查看递增的日志文件）</span><br><span class="line">-n &lt;行数&gt;       显示行数（从后向前）</span><br></pre></td></tr></table></figure></p>
+<h2 id="chmod-命令"><a href="#chmod-命令" class="headerlink" title="chmod 命令"></a>chmod 命令</h2><p>用于改变 linux 系统文件或目录的访问权限。用它控制文件或目录的访问权限。该命令有两种用法。一种是包含字母和操作符表达式的文字设定法；另一种是包含数字的数字设定法。</p>
+<p>每一文件或目录的访问权限都有三组，每组用三位表示，分别为文件属主的读、写和执行权限；与属主同组的用户的读、写和执行权限；系统中其他用户的读、写和执行权限。权限字符用横线代表空许可，r 代表只读，w 代表写，x 代表可执行。</p>
+<p>常用参数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-c 当发生改变时，报告处理信息</span><br><span class="line">-R 处理指定目录以及其子目录下所有文件</span><br></pre></td></tr></table></figure></p>
+<p>权限范围：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">u ：目录或者文件的当前的用户</span><br><span class="line">g ：目录或者文件的当前的群组</span><br><span class="line">o ：除了目录或者文件的当前用户或群组之外的用户或者群组</span><br><span class="line">a ：所有的用户及群组</span><br></pre></td></tr></table></figure></p>
+<p>权限代号：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">r ：读权限，用数字4表示</span><br><span class="line">w ：写权限，用数字2表示</span><br><span class="line">x ：执行权限，用数字1表示</span><br><span class="line">- ：删除权限，用数字0表示</span><br><span class="line">s ：特殊权限</span><br></pre></td></tr></table></figure></p>
+<p>实例：</p>
+<ol>
+<li><p>增加文件 t.log 所有用户可执行权限</p>
+<pre><code>chmod a+x t.log
+</code></pre></li>
+<li><p>撤销原来所有的权限，然后使拥有者具有可读权限,并输出处理信息</p>
+<pre><code>chmod u=r t.log -c
+</code></pre></li>
+<li><p>给 file 的属主分配读、写、执行(7)的权限，给file的所在组分配读、执行(5)的权限，给其他用户分配执行(1)的权限</p>
+<pre><code>chmod 751 t.log -c（或者：chmod u=rwx,g=rx,o=x t.log -c)
+</code></pre></li>
+<li><p>将 test 目录及其子目录所有文件添加可读权限</p>
+<pre><code>chmod u+r,g+r,o+r -R text/ -c
+</code></pre></li>
+</ol>
+<h2 id="tar-命令"><a href="#tar-命令" class="headerlink" title="tar 命令"></a>tar 命令</h2><p>用来压缩和解压文件。tar 本身不具有压缩功能，只具有打包功能，有关压缩及解压是调用其它的功能来完成。</p>
+<p>弄清两个概念：打包和压缩。打包是指将一大堆文件或目录变成一个总的文件；压缩则是将一个大的文件通过一些压缩算法变成一个小文件</p>
+<p>常用参数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-c      建立新的压缩文件</span><br><span class="line">-f      指定压缩文件</span><br><span class="line">-r      添加文件到已经压缩文件包中</span><br><span class="line">-u      添加改了和现有的文件到压缩包中</span><br><span class="line">-x      从压缩包中抽取文件</span><br><span class="line">-t      显示压缩文件中的内容</span><br><span class="line">-z      支持gzip压缩</span><br><span class="line">-j      支持bzip2压缩</span><br><span class="line">-Z      支持compress解压文件</span><br><span class="line">-v      显示操作过程</span><br></pre></td></tr></table></figure></p>
+<p>实例：</p>
+<ol>
+<li><p>将文件全部打包成 tar 包</p>
+<pre><code>tar -cvf log.tar 1.log,2.log 或tar -cvf log.*
+</code></pre></li>
+<li><p>将 /etc 下的所有文件及目录打包到指定目录，并使用 gz 压缩</p>
+<pre><code>tar -zcvf /tmp/etc.tar.gz /etc
+</code></pre></li>
+<li><p>查看刚打包的文件内容（一定加z，因为是使用 gzip 压缩的）</p>
+<pre><code>tar -ztvf /tmp/etc.tar.gz
+</code></pre></li>
+<li><p>要压缩打包 /home, /etc ，但不要 /home/dmtsai</p>
+<pre><code>tar --exclude /home/dmtsai -zcvf myfile.tar.gz /home/* /etc
+</code></pre></li>
+</ol>
+<h2 id="chown-命令"><a href="#chown-命令" class="headerlink" title="chown 命令"></a>chown 命令</h2><p>chown 将指定文件的拥有者改为指定的用户或组，用户可以是用户名或者用户 ID；组可以是组名或者组 ID；文件是以空格分开的要改变权限的文件列表，支持通配符。</p>
+<pre><code>-c 显示更改的部分的信息
+-R 处理指定目录及子目录
+</code></pre><p>实例：</p>
+<ol>
+<li><p>改变拥有者和群组 并显示改变信息</p>
+<pre><code>chown -c mail:mail log2012.log
+</code></pre></li>
+<li><p>改变文件群组</p>
+<pre><code>chown -c :mail t.log
+</code></pre></li>
+<li><p>改变文件夹及子文件目录属主及属组为 mail</p>
+<pre><code>chown -cR mail: test/
+</code></pre></li>
+</ol>
+<h2 id="ps-命令-process-status"><a href="#ps-命令-process-status" class="headerlink" title="ps 命令(process status)"></a>ps 命令(process status)</h2><p>用来查看当前运行的进程状态，一次性查看，如果需要动态连续结果使用 top</p>
+<p>实例：</p>
+<ol>
+<li><p>显示当前所有进程环境变量及进程间关系</p>
+<pre><code>ps -ef
+</code></pre></li>
+<li><p>显示当前所有进程</p>
+<pre><code>ps -A
+</code></pre></li>
+<li><p>与grep联用查找某进程</p>
+<pre><code>ps -aux | grep apache
+</code></pre></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/21/linux常用命令/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
