@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="ls命令(list)通过 ls 命令不仅可以查看 linux 文件夹包含的文件，而且可以查看文件权限(包括目录、文件夹、文件权限)查看目录信息等等。 常用参数搭配：1234567ls -a   #列出目录所有文件，包含以.开始的隐藏文件ls -A   #列出除.及..的其它文件ls -r   #反序排列ls -t   #以文件修改时间排序ls -S   #以文件大小排序ls -h   #以易读大">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-11-21T08:08:47.461Z">
+<meta property="og:updated_time" content="2019-11-21T08:19:34.559Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux常用命令">
 <meta name="twitter:description" content="ls命令(list)通过 ls 命令不仅可以查看 linux 文件夹包含的文件，而且可以查看文件权限(包括目录、文件夹、文件权限)查看目录信息等等。 常用参数搭配：1234567ls -a   #列出目录所有文件，包含以.开始的隐藏文件ls -A   #列出除.及..的其它文件ls -r   #反序排列ls -t   #以文件修改时间排序ls -S   #以文件大小排序ls -h   #以易读大">
@@ -167,7 +167,7 @@
 
         
         <a href="/2019/11/21/linux常用命令/" class="archive-article-date">
-  	<time datetime="2019-11-21T08:08:47.461Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
+  	<time datetime="2019-11-21T08:19:34.559Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
 </a>
         
       </header>
@@ -201,51 +201,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-p      <span class="comment">#子目录被删除后父目录也成为空目录的话，则顺便一并删除：</span></span><br></pre></td></tr></table></figure>
 <h2 id="mv-命令"><a href="#mv-命令" class="headerlink" title="mv 命令"></a>mv 命令</h2><p>移动文件或修改文件名，根据第二参数类型（如目录，则移动文件；如为文件则重命名该文件）。当第二个参数为目录时，可刚多个文件以空格分隔作为第一参数，移动多个文件到参数 2 指定的目录中。</p>
 <p>实例：</p>
-<ol>
-<li>将文件 test.log 重命名为 test1.txt</li>
-</ol>
-<blockquote>
-<pre><code>mv test.log test1.txt
-</code></pre></blockquote>
-<ol start="2">
-<li>将文件 log1.txt,log2.txt,log3.txt 移动到根的 test3 目录中</li>
-</ol>
-<blockquote>
-<pre><code>mv llog1.txt log2.txt log3.txt /test3
-</code></pre></blockquote>
-<ol start="3">
-<li>将文件 file1 改名为 file2，如果 file2 已经存在，则询问是否覆盖</li>
-</ol>
-<blockquote>
-<pre><code>mv -i log1.txt log2.txt
-</code></pre></blockquote>
-<ol start="4">
-<li>移动当前文件夹下的所有文件到上一级目录</li>
-</ol>
-<blockquote>
-<pre><code>mv * ../
-</code></pre></blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1. 将文件 test.log 重命名为 test1.txt</span></span><br><span class="line"></span><br><span class="line">mv test.log test1.txt</span><br><span class="line"></span><br><span class="line"><span class="comment">#2. 将文件 log1.txt,log2.txt,log3.txt 移动到根的 test3 目录中</span></span><br><span class="line"></span><br><span class="line">mv llog1.txt log2.txt log3.txt /test3</span><br><span class="line"></span><br><span class="line"><span class="comment">#3. 将文件 file1 改名为 file2，如果 file2 已经存在，则询问是否覆盖</span></span><br><span class="line"></span><br><span class="line">mv -i log1.txt log2.txt</span><br><span class="line"></span><br><span class="line"><span class="comment">#4. 移动当前文件夹下的所有文件到上一级目录</span></span><br><span class="line"></span><br><span class="line">mv * ../</span><br></pre></td></tr></table></figure>
 <h2 id="cp-命令"><a href="#cp-命令" class="headerlink" title="cp 命令"></a>cp 命令</h2><p>将源文件复制至目标文件，或将多个源文件复制至目标目录。</p>
 <p>注意：命令行复制，如果目标文件已经存在会提示是否覆盖，而在 shell 脚本中，如果不加 -i 参数，则不会提示，而是直接覆盖！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-i 提示</span><br><span class="line">-r 复制目录及目录内所有项目</span><br><span class="line">-a 复制的文件与原文件时间一样</span><br></pre></td></tr></table></figure></p>
-<h2 id="cat-命令"><a href="#cat-命令" class="headerlink" title="cat 命令"></a>cat 命令</h2><p>cat 主要有三大功能：</p>
-<ol>
-<li>一次显示整个文件:</li>
-</ol>
-<blockquote>
-<pre><code>cat filename
-</code></pre></blockquote>
-<ol start="2">
-<li>从键盘创建一个文件(只能创建新文件，不能编辑已有文件):</li>
-</ol>
-<blockquote>
-<pre><code>cat &gt; filename
-</code></pre></blockquote>
-<ol start="3">
-<li>将几个文件合并为一个文件:</li>
-</ol>
-<blockquote>
-<pre><code>cat file1 file2 &gt; file
-</code></pre></blockquote>
+<h2 id="cat-命令"><a href="#cat-命令" class="headerlink" title="cat 命令"></a>cat 命令</h2><p>cat 主要有三大功能：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1. 一次显示整个文件:</span></span><br><span class="line"></span><br><span class="line">cat filename</span><br><span class="line"></span><br><span class="line"><span class="comment">#2. 从键盘创建一个文件(只能创建新文件，不能编辑已有文件):</span></span><br><span class="line"></span><br><span class="line">cat &gt; filename</span><br><span class="line"></span><br><span class="line"><span class="comment">#3. 将几个文件合并为一个文件:</span></span><br><span class="line"></span><br><span class="line">cat file1 file2 &gt; file</span><br></pre></td></tr></table></figure></p>
 <p>选项:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-b 对非空输出行号</span><br><span class="line">-n 输出所有行号</span><br></pre></td></tr></table></figure></p>
 <h2 id="more-命令"><a href="#more-命令" class="headerlink" title="more 命令"></a>more 命令</h2><p>功能类似于 cat, more 会以一页一页的显示方便使用者逐页阅读，而最基本的指令就是按空白键（space）就往下一页显示，按 b 键就会往回（back）一页显示。</p>
 <h2 id="less-命令"><a href="#less-命令" class="headerlink" title="less 命令"></a>less 命令</h2><p>less 与 more 类似，但使用 less 可以随意浏览文件，而 more 仅能向前移动，却不能向后移动，而且 less 在查看之前不会加载整个文件。</p>
@@ -259,101 +218,17 @@
 <p>常用参数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-c 当发生改变时，报告处理信息</span><br><span class="line">-R 处理指定目录以及其子目录下所有文件</span><br></pre></td></tr></table></figure></p>
 <p>权限范围：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">u ：目录或者文件的当前的用户</span><br><span class="line">g ：目录或者文件的当前的群组</span><br><span class="line">o ：除了目录或者文件的当前用户或群组之外的用户或者群组</span><br><span class="line">a ：所有的用户及群组</span><br></pre></td></tr></table></figure></p>
 <p>权限代号：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">r ：读权限，用数字4表示</span><br><span class="line">w ：写权限，用数字2表示</span><br><span class="line">x ：执行权限，用数字1表示</span><br><span class="line">- ：删除权限，用数字0表示</span><br><span class="line">s ：特殊权限</span><br></pre></td></tr></table></figure></p>
-<p>实例：</p>
-<ol>
-<li>增加文件 t.log 所有用户可执行权限</li>
-</ol>
-<blockquote>
-<pre><code>chmod a+x t.log
-</code></pre></blockquote>
-<ol start="2">
-<li>撤销原来所有的权限，然后使拥有者具有可读权限,并输出处理信息</li>
-</ol>
-<blockquote>
-<pre><code>chmod u=r t.log -c
-</code></pre></blockquote>
-<ol start="3">
-<li>给 file 的属主分配读、写、执行(7)的权限，给file的所在组分配读、执行(5)的权限，给其他用户分配执行(1)的权限</li>
-</ol>
-<blockquote>
-<pre><code>chmod 751 t.log -c（或者：chmod u=rwx,g=rx,o=x t.log -c)
-</code></pre></blockquote>
-<ol start="4">
-<li>将 test 目录及其子目录所有文件添加可读权限</li>
-</ol>
-<blockquote>
-<pre><code>chmod u+r,g+r,o+r -R text/ -c
-</code></pre></blockquote>
+<p>实例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1. 增加文件 t.log 所有用户可执行权限</span></span><br><span class="line"></span><br><span class="line">chmod a+x t.log</span><br><span class="line"></span><br><span class="line"><span class="comment">#2. 撤销原来所有的权限，然后使拥有者具有可读权限,并输出处理信息</span></span><br><span class="line"></span><br><span class="line">chmod u=r t.log -c</span><br><span class="line"></span><br><span class="line"><span class="comment">#3. 给 file 的属主分配读、写、执行(7)的权限，给file的所在组分配读、执行(5)的权限，给其他用户分配执行(1)的权限</span></span><br><span class="line"></span><br><span class="line">chmod 751 t.log -c（或者：chmod u=rwx,g=rx,o=x t.log -c)</span><br><span class="line"></span><br><span class="line"><span class="comment">#4. 将 test 目录及其子目录所有文件添加可读权限</span></span><br><span class="line"></span><br><span class="line">chmod u+r,g+r,o+r -R text/ -c</span><br></pre></td></tr></table></figure></p>
 <h2 id="tar-命令"><a href="#tar-命令" class="headerlink" title="tar 命令"></a>tar 命令</h2><p>用来压缩和解压文件。tar 本身不具有压缩功能，只具有打包功能，有关压缩及解压是调用其它的功能来完成。</p>
 <p>弄清两个概念：打包和压缩。打包是指将一大堆文件或目录变成一个总的文件；压缩则是将一个大的文件通过一些压缩算法变成一个小文件</p>
 <p>常用参数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-c      建立新的压缩文件</span><br><span class="line">-f      指定压缩文件</span><br><span class="line">-r      添加文件到已经压缩文件包中</span><br><span class="line">-u      添加改了和现有的文件到压缩包中</span><br><span class="line">-x      从压缩包中抽取文件</span><br><span class="line">-t      显示压缩文件中的内容</span><br><span class="line">-z      支持gzip压缩</span><br><span class="line">-j      支持bzip2压缩</span><br><span class="line">-Z      支持compress解压文件</span><br><span class="line">-v      显示操作过程</span><br></pre></td></tr></table></figure></p>
-<p>实例：</p>
-<ol>
-<li>将文件全部打包成 tar 包</li>
-</ol>
-<blockquote>
-<pre><code>tar -cvf log.tar 1.log,2.log 或tar -cvf log.*
-</code></pre></blockquote>
-<ol start="2">
-<li>将 /etc 下的所有文件及目录打包到指定目录，并使用 gz 压缩</li>
-</ol>
-<blockquote>
-<pre><code>tar -zcvf /tmp/etc.tar.gz /etc
-</code></pre></blockquote>
-<ol start="3">
-<li>查看刚打包的文件内容（一定加z，因为是使用 gzip 压缩的）</li>
-</ol>
-<blockquote>
-<pre><code>tar -ztvf /tmp/etc.tar.gz
-</code></pre></blockquote>
-<ol start="4">
-<li>要压缩打包 /home, /etc ，但不要 /home/dmtsai</li>
-</ol>
-<blockquote>
-<pre><code>tar --exclude /home/dmtsai -zcvf myfile.tar.gz /home/* /etc
-</code></pre></blockquote>
+<p>实例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1. 将文件全部打包成 tar 包</span></span><br><span class="line"></span><br><span class="line">tar -cvf log.tar 1.log,2.log 或tar -cvf <span class="built_in">log</span>.*</span><br><span class="line"></span><br><span class="line"><span class="comment">#2. 将 /etc 下的所有文件及目录打包到指定目录，并使用 gz 压缩</span></span><br><span class="line"></span><br><span class="line">tar -zcvf /tmp/etc.tar.gz /etc</span><br><span class="line"></span><br><span class="line"><span class="comment">#3. 查看刚打包的文件内容（一定加z，因为是使用 gzip 压缩的）</span></span><br><span class="line"></span><br><span class="line">tar -ztvf /tmp/etc.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment">#4. 要压缩打包 /home, /etc ，但不要 /home/dmtsai</span></span><br><span class="line"></span><br><span class="line">tar --exclude /home/dmtsai -zcvf myfile.tar.gz /home/* /etc</span><br></pre></td></tr></table></figure></p>
 <h2 id="chown-命令"><a href="#chown-命令" class="headerlink" title="chown 命令"></a>chown 命令</h2><p>chown 将指定文件的拥有者改为指定的用户或组，用户可以是用户名或者用户 ID；组可以是组名或者组 ID；文件是以空格分开的要改变权限的文件列表，支持通配符。</p>
 <pre><code>-c 显示更改的部分的信息
 -R 处理指定目录及子目录
-</code></pre><p>实例：</p>
-<ol>
-<li>改变拥有者和群组 并显示改变信息</li>
-</ol>
-<blockquote>
-<pre><code>chown -c mail:mail log2012.log
-</code></pre></blockquote>
-<ol start="2">
-<li>改变文件群组</li>
-</ol>
-<blockquote>
-<pre><code>chown -c :mail t.log
-</code></pre></blockquote>
-<ol start="3">
-<li>改变文件夹及子文件目录属主及属组为 mail</li>
-</ol>
-<blockquote>
-<pre><code>chown -cR mail: test/
-</code></pre></blockquote>
+</code></pre><p>实例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1. 改变拥有者和群组 并显示改变信息</span></span><br><span class="line"></span><br><span class="line">chown -c mail:mail log2012.log</span><br><span class="line"></span><br><span class="line"><span class="comment">#2. 改变文件群组</span></span><br><span class="line"></span><br><span class="line">chown -c :mail t.log</span><br><span class="line"></span><br><span class="line"><span class="comment">#3. 改变文件夹及子文件目录属主及属组为 mail</span></span><br><span class="line"></span><br><span class="line">chown -cR mail: <span class="built_in">test</span>/</span><br></pre></td></tr></table></figure></p>
 <h2 id="ps-命令-process-status"><a href="#ps-命令-process-status" class="headerlink" title="ps 命令(process status)"></a>ps 命令(process status)</h2><p>用来查看当前运行的进程状态，一次性查看，如果需要动态连续结果使用 top</p>
-<p>实例：</p>
-<ol>
-<li>显示当前所有进程环境变量及进程间关系</li>
-</ol>
-<blockquote>
-<pre><code>ps -ef
-</code></pre></blockquote>
-<ol start="2">
-<li>显示当前所有进程</li>
-</ol>
-<blockquote>
-<pre><code>ps -A
-</code></pre></blockquote>
-<ol start="3">
-<li>与grep联用查找某进程</li>
-</ol>
-<blockquote>
-<pre><code>ps -aux | grep apache
-</code></pre></blockquote>
+<p>实例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1. 显示当前所有进程环境变量及进程间关系</span></span><br><span class="line"></span><br><span class="line">ps -ef</span><br><span class="line"></span><br><span class="line"><span class="comment">#2. 显示当前所有进程</span></span><br><span class="line"></span><br><span class="line">ps -A</span><br><span class="line"></span><br><span class="line"><span class="comment">#3. 与grep联用查找某进程</span></span><br><span class="line"></span><br><span class="line">ps -aux | grep apache</span><br></pre></td></tr></table></figure></p>
 
       
 
